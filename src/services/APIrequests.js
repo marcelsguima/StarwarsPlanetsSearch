@@ -5,7 +5,6 @@ const planetsFetch = async () => {
     results.forEach((element) => {
       delete element.residents;
     });
-    console.log(results);
     return results;
   } catch (e) {
     throw new Error(e.message);

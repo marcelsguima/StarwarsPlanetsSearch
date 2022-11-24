@@ -24,7 +24,9 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
-        {data.length > 0 && data.filter((e) => e.name.includes(name)).map((p) => (
+        {data.length > 0 && data.filter(
+          (e) => e.name.toLowerCase().includes(name),
+        ).map((p) => (
           <tr key={ p.name }>
             <td>{p.name}</td>
             <td>{p.rotation_period}</td>
