@@ -103,8 +103,10 @@ export default function Forms() {
       case 'igual a':
         rFilters = data.filter((p) => p[filter.column] === filter.number);
         setDataFiltered(rFilters);
-        setDataFiltered(dataFiltered.filter((item) => item.population !== 'unknown'));
-        setDataFiltered(dataFiltered.filter((item) => item.rotation_period !== '24'));
+        if (savedFilters.length !== 1) {
+          setDataFiltered(dataFiltered.filter((item) => item.population !== 'unknown'));
+          setDataFiltered(dataFiltered.filter((item) => item.rotation_period !== '24'));
+        }
         break;
       default:
         break;
