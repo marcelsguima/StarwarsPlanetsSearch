@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import tableContext from '../context/TableContext';
 
 export default function Table() {
-  const { data, name } = useContext(tableContext);
+  const { dataFiltered } = useContext(tableContext);
 
   return (
     <table>
@@ -24,9 +24,7 @@ export default function Table() {
         </tr>
       </thead>
       <tbody>
-        {data.length > 0 && data.filter(
-          (e) => e.name.toLowerCase().includes(name),
-        ).map((p) => (
+        {dataFiltered.length > 0 && dataFiltered.map((p) => (
           <tr key={ p.name }>
             <td>{p.name}</td>
             <td>{p.rotation_period}</td>
